@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include partial/head %>
+  <body>
+
+    <% include partial/menu %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-striped table-hover">
+            <thead>
+              <th>No</th>
+              <th>Poli Name</th>
+              <th>Action</th>
+            </thead>
+            <% var i = 1
+              data.forEach(function(r){ %>
+              <tbody>
+              <td><%= i %></td>
+              <td><%= r.poli_name.charAt(0).toUpperCase() + r.poli_name.slice(1) %></td>
+              <td>
+                <a href="/polyclinic/edit/<%= r.id %>">Edit</a>
+                <a href="/polyclinic/delete/<%= r.id %>">Delete</a>
+              </td>
+            </tbody>
+            <% i++ }) %>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <a href="/polyclinic/add" class="btn btn-success">Add Polyclinic</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <a href="/" style="margin-top:20px; display:inline-block"> << back to home </a>
+        </div>
+      </div>
+    </div>
+
+    <% include partial/footer %>
+  </body>
+</html>

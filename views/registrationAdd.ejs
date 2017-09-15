@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include partial/head %>
+  <body>
+
+    <% include partial/menu %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <form action="/registration/add-poli" method="post">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Patient Name :</label>
+              <select class="" name="patName">
+                <option value=""> - choose - </option>
+                <% data.forEach(function(r){ %>
+                <option value="<%= r.id %>"><%= r.first_name.charAt(0).toUpperCase() + r.first_name.slice(1) %> <% r.last_name.charAt(0).toUpperCase() + r.last_name.slice(1) %></option>
+                <% }) %>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Poli Name :</label>
+              <select class="" name="polName">
+                <option value=""> - choose - </option>
+                <% dataPol.forEach(function(r){ %>
+                <option value="<%= r.id %>"><%= r.poli_name %></option>
+                <% }) %>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <a href="/polyclinic" style="margin-top:20px; display:inline-block"> << back to polyclinic </a>
+        </div>
+      </div>
+    </div>
+
+    <% include partial/footer %>
+  </body>
+</html>

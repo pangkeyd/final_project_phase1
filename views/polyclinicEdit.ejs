@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include partial/head %>
+  <body>
+
+    <% include partial/menu %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <form action="/polyclinic/edit/<%= data[0].id %>" method="post">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Poly Name</label>
+              <input type="text" name="pn" value="<%= data[0].poli_name %>" class="form-control" id="exampleInputEmail1" placeholder="Poly Name">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <a href="/polyclinic" style="margin-top:20px; display:inline-block"> << back to polyclinic </a>
+        </div>
+      </div>
+    </div>
+
+    <% include partial/footer %>
+  </body>
+</html>
