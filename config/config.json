@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "dpangkey",
-    "password": "dpangkey",
+    "username": "postgres",
+    "password": "postgres",
     "database": "finalproject_phase1",
     "host": "127.0.0.1",
     "dialect": "postgres"
